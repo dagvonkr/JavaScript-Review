@@ -1,5 +1,8 @@
 /* Declare and Define the functions here that will make the function calls below work properly */
 
+var first = function(arr, cb) {
+  cb(arr[0]);
+}
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -10,25 +13,38 @@ first(names, function(firstName){
 
 
 
+
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
+var last = function(arr, cb) {
+  var lastNameInArr = arr[arr.length - 1];
+  cb(lastNameInArr);
+}
 
 
-
-var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlaaan'];
 last(names, function(lastName){
   console.log('The last name in names is ', lastName);
 });
 
-
+// Bra jobba din fitte
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 //have the contains function return a boolean value for if the name is in the array or not.
 
+var contains = function(str, arr, cb) {
+    for (var i = 0; i < arr.length; i++) {
+      if(str === arr[i]) {
+        return cb(true);
+      }
+    }
+   cb(false); 
+}
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+
 contains('Colt', names, function(yes){
   if(yes){
     console.log('Colt is in the array');
@@ -37,12 +53,22 @@ contains('Colt', names, function(yes){
   }
 });
 
+// Det jeg gjorde feil her var at jeg alldri invoked noe som helst. Her så invoker jeg cb, men 
+// om loopen får en match så invoker jeg den igjen bare med true i stede for false. 
 
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
+var newArr = [];
 
+var map = function(arr, cb) {
+  function(num) {
+    for (var i = 0; i < arr.length; i++) {
+      // where i left off 
+    }
+  }
+}
 
 
 var numbers = [1,2,3,4,5];
